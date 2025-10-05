@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav Bar</title>
+</head>
+<!-- <link rel="stylesheet" href="style.css"> -->
+ <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+
+
+:root{
+        --primarycolor: #302b52 ;
+    }
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+      
+        /* color: white; */
+        background-color: #000816;
+    }
+    .navbar{
+        width: 45vw;
+        position: fixed;
+        justify-self: center;
+        top: 15px;
+        z-index: 10;
+    }
+    .navbar ul{
+        background: rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(10px);
+        display: flex;
+        justify-content: space-around;    
+        border-radius: 25px;
+        padding: 5px;
+
+    }
+    .navbar ul li{
+        list-style-type: none;
+        padding: 5px 5px;
+        position: relative;
+
+    }
+
+    .navbar ul li::after{
+        content: "-";
+        position: absolute;
+        height: 2px;
+        top: 27px;
+        left: 0px;
+        width: 0;
+        background-color: #009dffed;
+        transition: width 0.5s ease;
+
+    }
+    .navbar ul li:hover::after{
+        width: 100%;
+
+        
+    }
+    .navbar ul li a{
+        text-decoration: none;
+        color: #E8C1C5;
+        font-family: "Nunito", sans-serif;
+        font-weight: 550;
+        
+    }
+
+    .page1{
+        max-height: 100vh;
+        padding: 150px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .page1 .content1{
+        height: 50vh;
+        width: 100vw;
+        display: flex;
+        justify-content: space-around;
+        color: white;
+    }
+    .page1 .content1 .pfp{
+        /* background-color: white; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+        width: 400px;
+        align-items: center;
+        
+        
+    }
+
+    .page1 .content1 .intro:first-child , .page1 .content1 .intro h3{
+        margin-top: 30px;
+        font-family: "Work Sans", sans-serif;
+        max-height: 500px;
+         font-size: 30px;
+         background: linear-gradient(90deg, #00c6ff, #0072ff, #4facfe);
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+
+    .page1 .content1 .intro{
+        max-width: 400px;
+    }
+
+    #whoami{
+        font-size: 16px;
+        margin: 10px;
+        text-align: left;
+        color: #E8C1C5;
+    }
+ 
+    .page1 .content1 .pfp img{
+        width: 300px;
+        padding: 14px;
+        background-color: rgba(255, 255, 255, 0.06);
+        border-radius: 50%;
+
+    }
+    .page1 .content1 .pfp p{
+        background: linear-gradient(90deg, #00c6ff, #0072ff, #4facfe);
+        -webkit-background-clip: text;
+        color: transparent;
+        padding: 10px;
+        font-family: "Outfit", sans-serif;
+        font-size: 30px;
+        text-wrap: wrap;
+    }
+    .page1 .content1 .pfp p strong{
+        font-weight: 900;
+    }
+    /* About Page */
+.about-page {
+    max-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding: 30px 80px;
+    color: #fff;
+    gap: 60px;
+}
+
+.about-text {
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(10px);
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    font-family: "Nunito", sans-serif;
+}
+
+.about-text h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-family: "Work Sans", sans-serif;
+    background: linear-gradient(90deg, #00c6ff, #0072ff, #4facfe);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: #E8C1C5;
+}
+
+.about-text .highlight {
+    color: #00c6ff;
+    font-weight: 700;
+}
+
+.about-photo img {
+    width: 340px;
+    height: auto;
+    border-radius: 50%;
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+}
+
+.about-photo img:hover {
+    transform: scale(1.05);
+}
+
+/* Active navbar link */
+.navbar ul li a.active {
+    color: #00c6ff;
+    font-weight: bold;
+}
+/* Projects */
+
+.projects{
+    padding: 100px 80px;
+    max-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ #project{
+    margin: 20px;
+    font-size: 40px;
+    font-weight: 900;
+    background: linear-gradient(90deg, #00c6ff, #0072ff, #4facfe);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-family: "Work Sans", sans-serif;
+    text-align: center;
+}
+.project-cards{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.project-cards .card{
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    width: 350px;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+   
+}
+
+
+
+.project-cards .card:hover{
+    transform: scale(1.05);
+}
+.project-cards .card .thumbnail img{
+    /* height: 100px; */
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+ </style>
+
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About Me</a></li>
+            <li><a href="">Project</a></li>
+            <li><a href="">Contact Me</a></li>
+        </ul>
+    </div>
+
+    <div class="page1">
+        <div class="content1">
+            <div class="intro">
+                <p>Hello, I'm</p>
+                <h1>Saksham Gupta</h1>
+                <p id="whoami">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, provident non eaque dolor
+                    atque hic magni aperiam consectetur ducimus cumque placeat. Sunt, aperiam consequuntur inventore
+                    deserunt eum tempora dicta eligendi molestiae</p>
+            </div>
+            <div class="pfp">
+                <img src="pfp1.png" alt="pfp">
+                <p>First year undergrad at <strong>Scaler School Of Technology</strong></p>
+            </div>
+        </div>
+
+        <hr>
+    </div>
+    <div class="about-page">
+        <div class="about-text">
+            <h1>About Me</h1>
+            <p>
+                Hey! I'm <strong>Saksham Gupta</strong>, currently a first year undergrad at
+                <span class="highlight">Scaler School of Technology</span>.
+            </p>
+            <p>
+                I'm passionate about <span class="highlight">web development</span>,
+                <span class="highlight">problem solving</span>, and learning by building.
+                My focus is on becoming a <strong>full stack developer</strong> capable of creating
+                impactful and modern digital experiences.
+            </p>
+            <p>
+                When I'm not coding, I enjoy diving into design, reading about startups, and
+                experimenting with new technologies. My philosophy is simple:
+                <span class="highlight">keep learning, keep shipping.</span>
+            </p>
+        </div>
+
+        <div class="about-photo">
+            <img src="mypic.jpg"
+                alt="About Me">
+        </div>
+    </div>
+
+    <h1 id="project">Projects</h1>
+    <div class="projects">
+        <div class="project-cards">
+            <div class="card">
+                <div class="thumbnail">
+                    <img src="project1.png" alt="">
+                </div>
+                <p class="title">
+                    My project
+                </p>
+                <p class="description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quidem praesentium recusandae repellendus dolor, animi molestiae amet facilis ullam nisi?
+                </p>
+            </div>
+            <div class="card">
+                <div class="thumbnail">
+                    <img src="project1.png" alt="">
+                </div>
+                <p class="title">
+                    My project
+                </p>
+                <p class="description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quidem praesentium recusandae repellendus dolor, animi molestiae amet facilis ullam nisi?
+                </p>
+            </div>
+            <div class="card">
+                <div class="thumbnail">
+                    <img src="project1.png" alt="">
+                </div>
+                <p class="title">
+                    My project
+                </p>
+                <p class="description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quidem praesentium recusandae repellendus dolor, animi molestiae amet facilis ullam nisi?
+                </p>
+            </div>
+        </div>
+        
+    </div>
+</body>
+
+</html>
